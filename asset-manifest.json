@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/folksprak/static/css/main.08f352a7.chunk.css",
+    "main.js": "/folksprak/static/js/main.4aa29b9e.chunk.js",
+    "main.js.map": "/folksprak/static/js/main.4aa29b9e.chunk.js.map",
+    "runtime-main.js": "/folksprak/static/js/runtime-main.1e8d96ad.js",
+    "runtime-main.js.map": "/folksprak/static/js/runtime-main.1e8d96ad.js.map",
+    "static/js/2.ed9a0df9.chunk.js": "/folksprak/static/js/2.ed9a0df9.chunk.js",
+    "static/js/2.ed9a0df9.chunk.js.map": "/folksprak/static/js/2.ed9a0df9.chunk.js.map",
+    "static/js/3.07a3b14a.chunk.js": "/folksprak/static/js/3.07a3b14a.chunk.js",
+    "static/js/3.07a3b14a.chunk.js.map": "/folksprak/static/js/3.07a3b14a.chunk.js.map",
+    "index.html": "/folksprak/index.html",
+    "static/css/main.08f352a7.chunk.css.map": "/folksprak/static/css/main.08f352a7.chunk.css.map",
+    "static/js/2.ed9a0df9.chunk.js.LICENSE.txt": "/folksprak/static/js/2.ed9a0df9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1e8d96ad.js",
+    "static/js/2.ed9a0df9.chunk.js",
+    "static/css/main.08f352a7.chunk.css",
+    "static/js/main.4aa29b9e.chunk.js"
+  ]
+}
