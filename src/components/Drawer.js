@@ -2,7 +2,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import List from '@mui/material/List';
-import {makeStyles} from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
@@ -59,20 +59,15 @@ export default function Drawer() {
                     </ListItemIcon>
                     <ListItemText primary={'Dictionary'} />
                 </ListItem>
-                <ListItem button key={'mailing-list'}>
+                <ListItem button key={'mailing-list'} component="a" href={"https://lists.schokokeks.org/mailman/listinfo.cgi/folksprak"} rel="noreferrer" target='_blank' >
                     <ListItemIcon><MailIcon></MailIcon>
                     </ListItemIcon>
-                    <ListItemText primary={'Mailing List'} />
+                    Mailing List
                 </ListItem>
-                <ListItem button key={'mail-archive'}>
-                    <ListItemIcon><MailIcon></MailIcon>
-                    </ListItemIcon>
-                    <ListItemText primary={'Mail Archive'} />
-                </ListItem>
-                <ListItem button key={'chat'}>
+                <ListItem button key={'chat'} component="a" href={"https://kiwiirc.com/nextclient/irc.libera.chat/?nick=sprekar_?&theme=cli##folksprak"} rel="noreferrer" target='_blank'>
                     <ListItemIcon><ChatIcon></ChatIcon>
                     </ListItemIcon>
-                    <a href={"https://kiwiirc.com/nextclient/irc.libera.chat/?nick=sprekar_?&theme=cli##folksprak"} rel="noreferrer" className={classes.root} target='_blank' >Chat</a>
+                    Chat
                 </ListItem>
             </List>
         </Box>
