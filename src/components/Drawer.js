@@ -17,6 +17,9 @@ const useStyles = makeStyles((theme) => ({
         color: 'black',
         textDecoration: 'none'
     },
+    button: {
+        height: '48px',
+    }
 }));
 
 export default function Drawer() {
@@ -45,27 +48,27 @@ export default function Drawer() {
         >
             <List>
                 <ListItem button key={'wiki'}>
-                    <ListItemIcon><BookIcon></BookIcon>
+                    <ListItemIcon><BookIcon style={{ fill: '#e53935' }}></BookIcon>
                     </ListItemIcon>
                     <ListItemText primary={'Wiki'} />
                 </ListItem>
                 <ListItem button key={'draft'}>
-                    <ListItemIcon><BookIcon></BookIcon>
+                    <ListItemIcon><BookIcon style={{ fill: '#e53935' }}></BookIcon>
                     </ListItemIcon>
                     <ListItemText primary={'Draft'} />
                 </ListItem>
                 <ListItem button key={'dictionary'}>
-                    <ListItemIcon><BookIcon></BookIcon>
+                    <ListItemIcon><BookIcon style={{ fill: '#e53935' }}></BookIcon>
                     </ListItemIcon>
                     <ListItemText primary={'Dictionary'} />
                 </ListItem>
-                <ListItem button key={'mailing-list'} component="a" href={"https://lists.schokokeks.org/mailman/listinfo.cgi/folksprak"} rel="noreferrer" target='_blank' >
-                    <ListItemIcon><MailIcon></MailIcon>
+                <ListItem button className={classes.button} key={'mailing-list'} component="a" href={"https://lists.schokokeks.org/mailman/listinfo.cgi/folksprak"} rel="noreferrer" target='_blank' >
+                    <ListItemIcon><MailIcon style={{ fill: '#e53935' }}></MailIcon>
                     </ListItemIcon>
                     Mailing List
                 </ListItem>
-                <ListItem button key={'chat'} component="a" href={"https://kiwiirc.com/nextclient/irc.libera.chat/?nick=sprekar_?&theme=cli##folksprak"} rel="noreferrer" target='_blank'>
-                    <ListItemIcon><ChatIcon></ChatIcon>
+                <ListItem button className={classes.button} key={'chat'} component="a" href={"https://kiwiirc.com/nextclient/irc.libera.chat/?nick=sprekar_?&theme=cli##folksprak"} rel="noreferrer" target='_blank'>
+                    <ListItemIcon><ChatIcon style={{ fill: '#e53935' }}></ChatIcon>
                     </ListItemIcon>
                     Chat
                 </ListItem>
