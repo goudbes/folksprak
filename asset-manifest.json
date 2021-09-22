@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/folksprak/static/css/main.9fcdef9d.chunk.css",
-    "main.js": "/folksprak/static/js/main.e53a6eea.chunk.js",
-    "main.js.map": "/folksprak/static/js/main.e53a6eea.chunk.js.map",
-    "runtime-main.js": "/folksprak/static/js/runtime-main.855855d9.js",
-    "runtime-main.js.map": "/folksprak/static/js/runtime-main.855855d9.js.map",
-    "static/js/2.f07cf8b6.chunk.js": "/folksprak/static/js/2.f07cf8b6.chunk.js",
-    "static/js/2.f07cf8b6.chunk.js.map": "/folksprak/static/js/2.f07cf8b6.chunk.js.map",
-    "static/js/3.6132fbb9.chunk.js": "/folksprak/static/js/3.6132fbb9.chunk.js",
-    "static/js/3.6132fbb9.chunk.js.map": "/folksprak/static/js/3.6132fbb9.chunk.js.map",
+    "main.js": "/folksprak/static/js/main.0d266cd0.chunk.js",
+    "main.js.map": "/folksprak/static/js/main.0d266cd0.chunk.js.map",
+    "runtime-main.js": "/folksprak/static/js/runtime-main.d76afe07.js",
+    "runtime-main.js.map": "/folksprak/static/js/runtime-main.d76afe07.js.map",
+    "static/js/2.49133df3.chunk.js": "/folksprak/static/js/2.49133df3.chunk.js",
+    "static/js/2.49133df3.chunk.js.map": "/folksprak/static/js/2.49133df3.chunk.js.map",
+    "static/js/3.ca6cd3c3.chunk.js": "/folksprak/static/js/3.ca6cd3c3.chunk.js",
+    "static/js/3.ca6cd3c3.chunk.js.map": "/folksprak/static/js/3.ca6cd3c3.chunk.js.map",
     "index.html": "/folksprak/index.html",
     "static/css/main.9fcdef9d.chunk.css.map": "/folksprak/static/css/main.9fcdef9d.chunk.css.map",
-    "static/js/2.f07cf8b6.chunk.js.LICENSE.txt": "/folksprak/static/js/2.f07cf8b6.chunk.js.LICENSE.txt"
+    "static/js/2.49133df3.chunk.js.LICENSE.txt": "/folksprak/static/js/2.49133df3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.855855d9.js",
-    "static/js/2.f07cf8b6.chunk.js",
+    "static/js/runtime-main.d76afe07.js",
+    "static/js/2.49133df3.chunk.js",
     "static/css/main.9fcdef9d.chunk.css",
-    "static/js/main.e53a6eea.chunk.js"
+    "static/js/main.0d266cd0.chunk.js"
   ]
 }
