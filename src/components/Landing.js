@@ -22,14 +22,14 @@ export default function Landing() {
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.down('sm'));
     return (
-        <Box sx={{ flexGrow: 1 }} mt={10}>
+        <Box sx={{ flexGrow: 1 }} mt={2}>
             <Grid container justifyContent="center" spacing={4} mb={1}>
                 <Grid item xs={11} md={10} lg={8}>
                     <Item elevation={0} align='left'><h1><span id={"welcome"}>Welcome<br></br>to </span><span id={"to-folksprak"}>Folksprak<span id={"folksprak"}>.</span></span></h1></Item>
                 </Grid>
             </Grid>
-            <Grid container justifyContent="center" spacing={4}>
-                <Grid item xs={11} md={6} lg={5}>
+            <Grid container justifyContent="center" spacing={2}>
+                <Grid item xs={11} md={6} lg={4}>
                     <Item elevation={0} align="left" id={"introductory"} >
                         <p>— a collaborative project that aims to construct an inter-Germanic zonal auxlang, a language that can be easily understood by any speaker of a Germanic language.
                             First proposed by Stephan Schneider, it is currently a collective work created by all interested parties.</p>
@@ -38,9 +38,9 @@ export default function Landing() {
                             Its original scope was to provide an inter-Germanic orthography based on reconstructed Proto-Germanic.</p>
                     </Item>
                 </Grid>
-                <Grid item xs={11} md={4} lg={3}>
-                    <Item elevation={0}>
-                        {matches ? <Wordcloudsm /> : <Wordcloud />}</Item>
+                <Grid item xs={11} md={4} lg={4} >
+                    <Item elevation={0} align="center" id="svg">
+                        {matches ? <Wordcloudsm /> : <Wordcloud/>}</Item>
                 </Grid>
             </Grid>
         </Box>

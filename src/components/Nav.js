@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: '"Londrina Outline"',
     color: 'white',
     fontSize: '2.5em',
-    top: 9,
+    top: 5,
     fontWeight: '400'
   },
   logosm: {
@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: '"Londrina Outline"',
     color: 'white',
     fontSize: '2.5em',
-    top: 9,
+    top: 5,
     fontWeight: '400'
   }
 }));

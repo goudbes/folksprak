@@ -14,13 +14,17 @@
     padding-top: 10%;
 }
 
+#svg {
+    height: 500px;
+}
+
 /* On screens that are 600px or less */
 
 @media screen and (max-width: 600px) {
     #welcome {
-        font-size: 1em;
+        font-size: 1.2em;
     }
     #to-folksprak {
-        font-size: 1.5em;
+        font-size: 1.8em;
     }
 }
