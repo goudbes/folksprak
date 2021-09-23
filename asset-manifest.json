@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/folksprak/static/css/main.01610249.chunk.css",
-    "main.js": "/folksprak/static/js/main.87696cd7.chunk.js",
-    "main.js.map": "/folksprak/static/js/main.87696cd7.chunk.js.map",
+    "main.css": "/folksprak/static/css/main.73cec6c9.chunk.css",
+    "main.js": "/folksprak/static/js/main.5bfd891d.chunk.js",
+    "main.js.map": "/folksprak/static/js/main.5bfd891d.chunk.js.map",
     "runtime-main.js": "/folksprak/static/js/runtime-main.cedc90ad.js",
     "runtime-main.js.map": "/folksprak/static/js/runtime-main.cedc90ad.js.map",
     "static/js/2.a8ba31b1.chunk.js": "/folksprak/static/js/2.a8ba31b1.chunk.js",
@@ -10,15 +10,15 @@
     "static/js/3.097ed391.chunk.js": "/folksprak/static/js/3.097ed391.chunk.js",
     "static/js/3.097ed391.chunk.js.map": "/folksprak/static/js/3.097ed391.chunk.js.map",
     "index.html": "/folksprak/index.html",
-    "static/css/main.01610249.chunk.css.map": "/folksprak/static/css/main.01610249.chunk.css.map",
+    "static/css/main.73cec6c9.chunk.css.map": "/folksprak/static/css/main.73cec6c9.chunk.css.map",
     "static/js/2.a8ba31b1.chunk.js.LICENSE.txt": "/folksprak/static/js/2.a8ba31b1.chunk.js.LICENSE.txt",
-    "static/media/wordcloud.ce198d62.svg": "/folksprak/static/media/wordcloud.ce198d62.svg",
-    "static/media/wordcloudsm.d9dd25a0.svg": "/folksprak/static/media/wordcloudsm.d9dd25a0.svg"
+    "static/media/wordcloud.afd879db.svg": "/folksprak/static/media/wordcloud.afd879db.svg",
+    "static/media/wordcloudsm.7be8433c.svg": "/folksprak/static/media/wordcloudsm.7be8433c.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.cedc90ad.js",
     "static/js/2.a8ba31b1.chunk.js",
-    "static/css/main.01610249.chunk.css",
-    "static/js/main.87696cd7.chunk.js"
+    "static/css/main.73cec6c9.chunk.css",
+    "static/js/main.5bfd891d.chunk.js"
   ]
 }
