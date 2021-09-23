@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap');
+
+.top-link {
+    display: 'inline-block';
+    align-items: flex-start
+}
+
+#logo a,
+#logo a:hover,
+#logo a:active,
+#logo a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+#logosm a,
+#logosm a:hover,
+#logosm a:active,
+#logosm a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+#mailing-list:hover,
+#chat:hover {
+    color:#ffccbc
+}
+
+.top-link:hover,
+.top-link:active {
+    color:#ffccbc
+}
+
+.top-link:visited {
+    color: white;
+}

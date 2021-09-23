@@ -1,0 +1,26 @@
+#welcome {
+    font-size: 2em;
+}
+
+#to-folksprak {
+    font-size: 3em;
+}
+
+#folksprak {
+    color: #ff5722;
+}
+
+#introductory {
+    padding-top: 10%;
+}
+
+/* On screens that are 600px or less */
+
+@media screen and (max-width: 600px) {
+    #welcome {
+        font-size: 1em;
+    }
+    #to-folksprak {
+        font-size: 1.5em;
+    }
+}

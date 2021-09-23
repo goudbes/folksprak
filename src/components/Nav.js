@@ -9,6 +9,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { makeStyles, createTheme, ThemeProvider } from '@material-ui/core/styles';
 import Drawer from './Drawer'
 import amber from '@material-ui/core/colors/amber';
+import '../stylesheets/nav.css'
 
 
 const menuItems = {
@@ -20,7 +21,7 @@ const menuItems = {
 const myTheme = createTheme({
   palette: {
     primary: {
-      main: '#e53935',
+      main: '#ff5722',
     },
     secondary: amber,
   },
@@ -32,29 +33,27 @@ const useStyles = makeStyles((theme) => ({
     display: 'inline-block',
     textDecoration: 'none',
     alignItems: 'flex-start',
-    fontSize: '1.2em'
   },
   appBar: {
     backgroundColor: myTheme.palette.primary.main,
   },
-  simpleLink: {
-    padding: '8px 16px',
+  logo: {
+    position: 'absolute',
+    left: '5%',
+    fontFamily: '"Londrina Outline"',
     color: 'white',
-    display: 'inline-block',
-    textDecoration: 'none',
-    fontSize: '1.2em'
+    fontSize: '2.5em',
+    top: 9,
+    fontWeight: '400'
   },
-  flag: {
-    height: '100%',
-    objectFit: 'contain',
+  logosm: {
     position: 'absolute',
-    left: '10px',
-  },
-  flagsm: {
-    height: '100%',
-    objectFit: 'contain',
-    position: 'absolute',
-    right: '10px',
+    right: '5%',
+    fontFamily: '"Londrina Outline"',
+    color: 'white',
+    fontSize: '2.5em',
+    top: 9,
+    fontWeight: '400'
   }
 }));
 
@@ -64,21 +63,22 @@ export default function Nav() {
   return (
     <ThemeProvider theme={myTheme}>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static" >
+        <AppBar elevation={0} position="static" >
           <Toolbar sx={{ flexGrow: 1 }} className={classes.appBar}>
-            {!matches ? (<> <img className={classes.flag} src={process.env.PUBLIC_URL + '/flag01.png'} /> <MenuList sx={{ flexGrow: 1 }} >
-              <Router>
+            {!matches ? (<>
+              <span id="logo" className={classes.logo}><Link to="/">folksprak</Link></span>
+              <MenuList sx={{ flexGrow: 1 }} >
                 {Object.entries(menuItems).map(([key, value]) => (
                   <Link className={classes.root} key={'k' + key} to={`#${key}`}>
-                    <ListItem key={'k' + key}>
+                    <ListItem className={'top-link'} key={'k' + key}>
                       {value}
                     </ListItem>
                   </Link>
                 ))}
-                <a href={"https://lists.schokokeks.org/mailman/listinfo.cgi/folksprak"} rel="noreferrer" className={classes.simpleLink} target='_blank' >Mailing List</a>
-                <a href={"https://kiwiirc.com/nextclient/irc.libera.chat/?nick=sprekar_?&theme=cli##folksprak"} rel="noreferrer" className={classes.simpleLink} target='_blank' >Chat</a>
-              </Router>
-            </MenuList></>) : <><img className={classes.flagsm} src={process.env.PUBLIC_URL + '/flag01.png'} /><Drawer /></>}
+                <div className={classes.root}><ListItem id="mailing-list" className={'top-link'} component="a" href={"https://lists.schokokeks.org/mailman/listinfo.cgi/folksprak"} rel="noreferrer" target='_blank'>Mailing List</ListItem></div>
+                <div className={classes.root}><ListItem id="chat" className={'top-link'} component="a" href={"https://kiwiirc.com/nextclient/irc.libera.chat/?nick=sprekar_?&theme=cli##folksprak"} rel="noreferrer" target='_blank'>Chat</ListItem></div>
+
+              </MenuList></>) : <><span id="logosm" className={classes.logosm}><Link to="/">folksprak</Link></span><Drawer /></>}
           </Toolbar>
         </AppBar>
       </Box>
