@@ -1,0 +1,12 @@
+{
+  "words": [
+    {"word": "afrikaans", "attribute": "attr", "translations" : ["afrikaans"]},
+	{"word": "ag", "attribute": "noun", "translations" : ["ear"]},
+	{"word": "agt", "attribute": "numb", "translations" : ["eight"]},
+	{"word": "akse", "attribute": "noun", "translations" : ["axe"]},
+	{"word": "aksel", "attribute": "noun", "translations" : ["shoulder"]},
+	{"word": "al", "attribute": "corr", "translations" : ["every","all"]},
+	{"word": "al ding", "attribute": "corr", "translations" : ["everything"]},
+	{"word": "al man", "attribute": "corr", "translations" : ["everyone", "everybody"]}	
+  ]
+}

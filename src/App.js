@@ -2,17 +2,26 @@ import React from 'react';
 import './App.css';
 import Nav from './components/Nav'
 import Landing from './components/Landing'
-import { BrowserRouter } from 'react-router-dom'
+import Dictionary from './components/Dictionary'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 function App() {
   return (
-    <BrowserRouter basename='/'>
-      <div className="App">
-        <Nav></Nav>
-        <Landing></Landing>
+    <Router>
+      <div className='App'>
+        <Nav />
+        <Switch>
+          <Route exact path='/'>
+            <Landing />
+          </Route>
+          <Route path='/dictionary'>
+            <Dictionary />
+          </Route>
+        </Switch>
       </div>
-    </BrowserRouter>
+    </Router>
   );
+
 }
 
 export default App;

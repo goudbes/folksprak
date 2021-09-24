@@ -5,21 +5,21 @@
     align-items: flex-start
 }
 
-#logo a,
-#logo a:hover,
-#logo a:active,
-#logo a:visited {
+.logo {
+    font-family: 'Londrina Outline';
+    color: white;
+    font-weight: '400';
+    font-size: 2.5em;
+}
+
+.logo a,
+.logo a:hover,
+.logo a:active,
+.logo a:visited {
     color: white;
     text-decoration: none;
 }
 
-#logosm a,
-#logosm a:hover,
-#logosm a:active,
-#logosm a:visited {
-    color: white;
-    text-decoration: none;
-}
 
 #mailing-list:hover,
 #chat:hover {
