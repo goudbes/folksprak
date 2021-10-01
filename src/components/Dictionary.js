@@ -4,7 +4,10 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
 import '../stylesheets/dictionary.css';
-import * as json from "../data/dict.json"
+import { useState, useEffect } from 'react';
+import initSqlJs from "sql.js";
+import sqlWasm from "!!file-loader?name=sql-wasm-[contenthash].wasm!sql.js/dist/sql-wasm.wasm";
+
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -13,25 +16,171 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.secondary,
 }));
 
+
+/*
 function Load() {
     return json ? (
         <ul id='ul-words'>{(json['words']).map((element, index) => {
             return <li key={index}><span id='folksprak-word'>{element.word}</span> [<span id='folksprak-attribute'>{element.attribute}</span>] — {element.translations.join(', ')}</li>
-          })}</ul>
-    ):(
+        })}</ul>
+    ) : (
         <p>Data loading failed.</p>
     )
 }
+*/
 
+/*
 export default function Dictionary() {
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState();
+
+    useEffect(() => {
+        setLoading(true);
+        fetch('/api/all')
+            .then((res) => res.json())
+            .then((data) => {
+                setData(data.data);
+            })
+            .catch((err) => {
+                setError(err);
+            })
+            .finally(() => {
+                setLoading(false);
+            });
+    }, []);
+
+    const useData = data.map((item, index) => {
+        console.log(item.Name);
+        return <li key={index}><span id='folksprak-word'>{item.Name}</span> [<span id='folksprak-attribute'>{item.Name}</span>]</li>
+    });
+
+    console.log(data);
     return (
         <><Box sx={{ flexGrow: 1 }} mt={2}>
             <Grid container justifyContent='center' spacing={4} mb={1}>
                 <Grid item xs={11} md={10} lg={8}>
-                    <Item elevation={0} align='left'><Load/></Item>
+                    <Item elevation={0} align='left'>
+                        <ul id='ul-words'>
+                            {loading ? <div>Data is loading...</div> : (error ? <div>Error occured.</div> : useData)}
+                        </ul>
+                    </Item>
                 </Grid>
             </Grid>
         </Box>
         </>
+    );
+}
+*/
+
+export default function Dictionary() {
+    const [db, setDb] = useState(null);
+    const [error, setError] = useState(null);
+
+    useEffect(async () => {
+        const sqliteDbResp = await fetch('Chinook_Sqlite.sqlite');
+        if (!sqliteDbResp.ok) {
+            throw new Error(`Failed to fetch ...`);
+        }
+        const sqliteDb = new Uint8Array(await sqliteDbResp.arrayBuffer());
+        console.log(`sqliteDb.length = ${sqliteDb.length}`);
+        try {
+            const SQL = await initSqlJs({ locateFile: () => sqlWasm });
+            setDb(new SQL.Database(sqliteDb));
+        } catch (err) {
+            setError(err);
+        }
+    }, []);
+
+    if (error) return <pre>{error.toString()}</pre>;
+    else if (!db) return <pre>Loading...</pre>;
+    else return <SQLRepl db={db} />;
+
+    return (
+        <><Box sx={{ flexGrow: 1 }} mt={2}>
+            <Grid container justifyContent='center' spacing={4} mb={1}>
+                <Grid item xs={11} md={10} lg={8}>
+                    <Item elevation={0} align='left'>
+                        <ul id='ul-words'>
+                            {error ? (<pre>{error.toString()}</pre>) : (!db ? (<pre>Loading...</pre>) : <SQLRepl db={db} />)}
+                        </ul>
+                    </Item>
+                </Grid>
+            </Grid>
+        </Box>
+        </>
+    );
+
+
+}
+
+
+function SQLRepl({ db }) {
+    const [error, setError] = useState(null);
+    const [results, setResults] = useState([]);
+
+    function exec(sql) {
+        try {
+            // The sql is executed synchronously on the UI thread.
+            // You may want to use a web worker here instead
+            const res = db.exec(sql);
+            console.log(res);
+            setResults(res); // an array of objects is returned
+            setError(null);
+        } catch (err) {
+            // exec throws an error when the SQL statement is invalid
+            setError(err);
+            setResults([]);
+        }
+    }
+
+    return (
+        <div>
+            <h1>React SQL interpreter</h1>
+
+            <textarea
+                onChange={(e) => exec(e.target.value)}
+                placeholder="Enter some SQL. No inspiration ? Try “select sqlite_version()”"
+            ></textarea>
+
+            <pre className="error">{(error || "").toString()}</pre>
+
+            <pre>
+                {
+                    // results contains one object per select statement in the query
+                    results.map(({ columns, values }, i) => (
+                        <ResultsTable key={i} columns={columns} values={values} />
+                    ))
+                }
+            </pre>
+        </div>
+    );
+}
+
+
+function ResultsTable({ columns, values }) {
+    return (
+        <table>
+            <thead>
+                <tr>
+                    {columns.map((columnName, i) => (
+                        <td key={i}>{columnName}</td>
+                    ))}
+                </tr>
+            </thead>
+
+            <tbody>
+                {
+                    // values is an array of arrays representing the results of the query
+                    values.map((row, i) => (
+                        <tr key={i}>
+                            {row.map((value, i) => (
+                                <td key={i}>{value}</td>
+                            ))}
+                        </tr>
+                    ))
+                }
+            </tbody>
+        </table>
     );
 }
