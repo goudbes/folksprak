@@ -4,6 +4,7 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
 import '../stylesheets/dictionary.css';
+import * as json from "../data/dict.json"
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -13,12 +14,13 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 function Load() {
-    let json = require('../data/dict.json');
-    return (
+    return json ? (
         <ul id='ul-words'>{(json['words']).map((element, index) => {
             return <li key={index}><span id='folksprak-word'>{element.word}</span> [<span id='folksprak-attribute'>{element.attribute}</span>] — {element.translations.join(', ')}</li>
           })}</ul>
-    );
+    ):(
+        <p>Data loading failed.</p>
+    )
 }
 
 export default function Dictionary() {
