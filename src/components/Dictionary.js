@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react';
 import initSqlJs from "sql.js";
 import sqlWasm from "!!file-loader?name=sql-wasm-[contenthash].wasm!sql.js/dist/sql-wasm.wasm";
 import { DataGrid, GridRowsProp, GridColDef } from '@mui/x-data-grid';
+import { indexOf } from 'lodash';
 
 
 
@@ -97,7 +98,7 @@ export default function Dictionary() {
         <><Box sx={{ flexGrow: 1 }} mt={2}>
             <Grid container justifyContent='center' spacing={4} mb={1}>
                 <Grid item xs={11} md={11} lg={11}>
-                    <Item elevation={1} align='center'>
+                    <Item elevation={0} align='center'>
                         {error ? (<pre>{error.toString()}</pre>) : (!db ? (<pre>Loading...</pre>) : <SQLRepl db={db} />)}
                     </Item>
                 </Grid>
@@ -154,31 +155,31 @@ function SQLRepl({ db }) {
 
 
 function ResultsTable({ columns, values }) {
-    const rows = [
-        { id: 1, col1: 'Hello', col2: 'World' },
-        { id: 2, col1: 'DataGridPro', col2: 'is Awesome' },
-        { id: 3, col1: 'Material-UI', col2: 'is Amazing' },
-    ];
-
-    let cols = [];
-    console.log("New columns = " + columns);
-    for (let i = 0; i < columns.length; i++) {
+    const c = columns.map(function (element, index, columns) {
         let column = new Object();
-        column.field = 'col' + (i + 1);
-        column.headerName = columns[i];
+        column.field = 'col' + (index + 1);
+        column.headerName = element;
         column.width = 150;
-        cols.push(column);
-    }
+        return column;
+    });
 
-    console.log(values);
+    let r = [];
+    values.map((row, i) => {
+        let currentRow = new Object();
+        currentRow.id = row[0];
+        row.map((value, index) => {
+            currentRow['col' + (++index)] = value;
+        });
+        r.push(currentRow);
+    });
 
     return (
         <><Box sx={{ flexGrow: 1 }} mt={2}>
             <Grid container justifyContent='center' spacing={4} mb={1}>
                 <Grid item xs={11} md={10} lg={8}>
-                    <Item elevation={1} align='center'>
-                        <div style={{ height: 300, width: '100%' }}>
-                            <DataGrid rows={rows} columns={cols} />
+                    <Item elevation={0} align='center'>
+                        <div style={{ height: '70vh', width: '100%' }}>
+                            <DataGrid rows={r} columns={c} />
                         </div>
                     </Item>
                 </Grid>
