@@ -1,24 +1,25 @@
 {
   "files": {
-    "main.css": "/folksprak/static/css/main.71feda84.chunk.css",
-    "main.js": "/folksprak/static/js/main.bde9e5db.chunk.js",
-    "main.js.map": "/folksprak/static/js/main.bde9e5db.chunk.js.map",
-    "runtime-main.js": "/folksprak/static/js/runtime-main.bc894afd.js",
-    "runtime-main.js.map": "/folksprak/static/js/runtime-main.bc894afd.js.map",
-    "static/js/2.310bda05.chunk.js": "/folksprak/static/js/2.310bda05.chunk.js",
-    "static/js/2.310bda05.chunk.js.map": "/folksprak/static/js/2.310bda05.chunk.js.map",
-    "static/js/3.1fb5235b.chunk.js": "/folksprak/static/js/3.1fb5235b.chunk.js",
-    "static/js/3.1fb5235b.chunk.js.map": "/folksprak/static/js/3.1fb5235b.chunk.js.map",
+    "main.css": "/folksprak/static/css/main.2c7afcdd.chunk.css",
+    "main.js": "/folksprak/static/js/main.84d4d915.chunk.js",
+    "main.js.map": "/folksprak/static/js/main.84d4d915.chunk.js.map",
+    "runtime-main.js": "/folksprak/static/js/runtime-main.e8eb5162.js",
+    "runtime-main.js.map": "/folksprak/static/js/runtime-main.e8eb5162.js.map",
+    "static/js/2.d3ee35dc.chunk.js": "/folksprak/static/js/2.d3ee35dc.chunk.js",
+    "static/js/2.d3ee35dc.chunk.js.map": "/folksprak/static/js/2.d3ee35dc.chunk.js.map",
+    "static/js/3.5b7a2fde.chunk.js": "/folksprak/static/js/3.5b7a2fde.chunk.js",
+    "static/js/3.5b7a2fde.chunk.js.map": "/folksprak/static/js/3.5b7a2fde.chunk.js.map",
     "index.html": "/folksprak/index.html",
-    "static/css/main.71feda84.chunk.css.map": "/folksprak/static/css/main.71feda84.chunk.css.map",
-    "static/js/2.310bda05.chunk.js.LICENSE.txt": "/folksprak/static/js/2.310bda05.chunk.js.LICENSE.txt",
+    "sql-wasm.wasm": "/folksprak/sql-wasm-2b277767061e6a2529fe1f2e6fe80b4a.wasm",
+    "static/css/main.2c7afcdd.chunk.css.map": "/folksprak/static/css/main.2c7afcdd.chunk.css.map",
+    "static/js/2.d3ee35dc.chunk.js.LICENSE.txt": "/folksprak/static/js/2.d3ee35dc.chunk.js.LICENSE.txt",
     "static/media/wordcloud.afd879db.svg": "/folksprak/static/media/wordcloud.afd879db.svg",
     "static/media/wordcloudsm.7be8433c.svg": "/folksprak/static/media/wordcloudsm.7be8433c.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.bc894afd.js",
-    "static/js/2.310bda05.chunk.js",
-    "static/css/main.71feda84.chunk.css",
-    "static/js/main.bde9e5db.chunk.js"
+    "static/js/runtime-main.e8eb5162.js",
+    "static/js/2.d3ee35dc.chunk.js",
+    "static/css/main.2c7afcdd.chunk.css",
+    "static/js/main.84d4d915.chunk.js"
   ]
 }
