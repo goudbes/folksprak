@@ -7,6 +7,7 @@ import '../stylesheets/dictionary.css';
 import { useState, useEffect } from 'react';
 import initSqlJs from "sql.js";
 import sqlWasm from "!!file-loader?name=sql-wasm-[contenthash].wasm!sql.js/dist/sql-wasm.wasm";
+import { DataGrid, GridRowsProp, GridColDef } from '@mui/x-data-grid';
 
 
 
@@ -92,18 +93,12 @@ export default function Dictionary() {
         }
     }, []);
 
-    if (error) return <pre>{error.toString()}</pre>;
-    else if (!db) return <pre>Loading...</pre>;
-    else return <SQLRepl db={db} />;
-
     return (
         <><Box sx={{ flexGrow: 1 }} mt={2}>
             <Grid container justifyContent='center' spacing={4} mb={1}>
-                <Grid item xs={11} md={10} lg={8}>
-                    <Item elevation={0} align='left'>
-                        <ul id='ul-words'>
-                            {error ? (<pre>{error.toString()}</pre>) : (!db ? (<pre>Loading...</pre>) : <SQLRepl db={db} />)}
-                        </ul>
+                <Grid item xs={11} md={11} lg={11}>
+                    <Item elevation={1} align='center'>
+                        {error ? (<pre>{error.toString()}</pre>) : (!db ? (<pre>Loading...</pre>) : <SQLRepl db={db} />)}
                     </Item>
                 </Grid>
             </Grid>
@@ -159,28 +154,59 @@ function SQLRepl({ db }) {
 
 
 function ResultsTable({ columns, values }) {
-    return (
-        <table>
-            <thead>
-                <tr>
-                    {columns.map((columnName, i) => (
-                        <td key={i}>{columnName}</td>
-                    ))}
-                </tr>
-            </thead>
+    const rows = [
+        { id: 1, col1: 'Hello', col2: 'World' },
+        { id: 2, col1: 'DataGridPro', col2: 'is Awesome' },
+        { id: 3, col1: 'Material-UI', col2: 'is Amazing' },
+    ];
 
-            <tbody>
-                {
-                    // values is an array of arrays representing the results of the query
-                    values.map((row, i) => (
-                        <tr key={i}>
-                            {row.map((value, i) => (
-                                <td key={i}>{value}</td>
-                            ))}
-                        </tr>
-                    ))
-                }
-            </tbody>
-        </table>
+    let cols = [];
+    console.log("New columns = " + columns);
+    for (let i = 0; i < columns.length; i++) {
+        let column = new Object();
+        column.field = 'col' + (i + 1);
+        column.headerName = columns[i];
+        column.width = 150;
+        cols.push(column);
+    }
+
+    console.log(values);
+
+    return (
+        <><Box sx={{ flexGrow: 1 }} mt={2}>
+            <Grid container justifyContent='center' spacing={4} mb={1}>
+                <Grid item xs={11} md={10} lg={8}>
+                    <Item elevation={1} align='center'>
+                        <div style={{ height: 300, width: '100%' }}>
+                            <DataGrid rows={rows} columns={cols} />
+                        </div>
+                    </Item>
+                </Grid>
+            </Grid>
+        </Box>
+        </>
     );
 }
+
+{/* <table>
+<thead>
+    <tr>
+        {columns.map((columnName, i) => (
+            <td key={i}>{columnName}</td>
+        ))}
+    </tr>
+</thead>
+
+<tbody>
+    {
+        // values is an array of arrays representing the results of the query
+        values.map((row, i) => (
+            <tr key={i}>
+                {row.map((value, i) => (
+                    <td key={i}>{value}</td>
+                ))}
+            </tr>
+        ))
+    }
+</tbody>
+</table> */}
