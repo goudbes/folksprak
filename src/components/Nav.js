@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import MenuList from '@mui/material/MenuList';
 import ListItem from '@mui/material/ListItem';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { makeStyles, createTheme, ThemeProvider } from '@material-ui/core/styles';
 import Drawer from './Drawer';

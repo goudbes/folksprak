@@ -3,7 +3,7 @@ import './App.css';
 import Nav from './components/Nav'
 import Landing from './components/Landing'
 import Dictionary from './components/Dictionary'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 
 function App() {
   return (
